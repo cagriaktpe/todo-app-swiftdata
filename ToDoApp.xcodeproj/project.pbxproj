@@ -12,6 +12,7 @@
 		EA44B1212AD7EC37008C125A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA44B1202AD7EC37008C125A /* Assets.xcassets */; };
 		EA44B1242AD7EC37008C125A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA44B1232AD7EC37008C125A /* Preview Assets.xcassets */; };
 		EA44B12B2AD81604008C125A /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B12A2AD81604008C125A /* ToDoItem.swift */; };
+		EA44B12D2AD818C9008C125A /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B12C2AD818C9008C125A /* CreateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		EA44B1202AD7EC37008C125A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA44B1232AD7EC37008C125A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA44B12A2AD81604008C125A /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		EA44B12C2AD818C9008C125A /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,10 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				EA44B11C2AD7EC32008C125A /* ToDoAppApp.swift */,
+				EA44B12A2AD81604008C125A /* ToDoItem.swift */,
 				EA44B11E2AD7EC32008C125A /* ContentView.swift */,
+				EA44B12C2AD818C9008C125A /* CreateView.swift */,
 				EA44B1202AD7EC37008C125A /* Assets.xcassets */,
 				EA44B1222AD7EC37008C125A /* Preview Content */,
-				EA44B12A2AD81604008C125A /* ToDoItem.swift */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA44B12D2AD818C9008C125A /* CreateView.swift in Sources */,
 				EA44B11F2AD7EC32008C125A /* ContentView.swift in Sources */,
 				EA44B11D2AD7EC32008C125A /* ToDoAppApp.swift in Sources */,
 				EA44B12B2AD81604008C125A /* ToDoItem.swift in Sources */,
