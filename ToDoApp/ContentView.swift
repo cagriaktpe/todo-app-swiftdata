@@ -11,7 +11,9 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     
-    @State private var showCreate = false
+    @State private var showCreateToDo = false
+    @State private var showCreateCategory = false
+    
     @State private var toDoToEdit: ToDoItem?
     @Query(
         filter: #Predicate {$0.isCompleted == false},
@@ -77,13 +79,13 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem {
                     Button(action: {
-                        showCreate.toggle()
+                        showCreateCategory.toggle()
                     }, label: {
-                        Label("Add Item", systemImage: "plus")
+                        Text("New Category")
                     })
                 }
             }
-            .sheet(isPresented: $showCreate, content: {
+            .sheet(isPresented: $showCreateToDo, content: {
                 NavigationStack {
                     CreateToDoView()
                 }
@@ -97,7 +99,25 @@ struct ContentView: View {
                 }
                 .presentationDetents([.medium])
             }
-        
+            .sheet(isPresented: $showCreateCategory, content: {
+                NavigationStack {
+                    CreateCategoryView()
+                }
+                .presentationDetents([.medium])
+            })
+            .safeAreaInset(edge: .bottom, alignment: .leading) {
+                Button {
+                    showCreateToDo.toggle()
+                } label: {
+                    Label("New ToDo", systemImage: "plus")
+                        .bold()
+                        .font(.title2)
+                        .padding(0)
+                        .background(.gray.opacity(0.1), in: Capsule())
+                        .padding(.leading)
+                        .symbolVariant(.circle.fill)
+                }
+            }
         }
     }
 }

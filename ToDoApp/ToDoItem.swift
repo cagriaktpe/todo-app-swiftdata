@@ -15,6 +15,9 @@ final class ToDoItem {
     var isCritical: Bool
     var isCompleted: Bool
     
+    @Relationship(deleteRule: .nullify, inverse: \Category.items)
+    var category: Category?
+    
     init(title: String = "", timestamp: Date = .now, isCritical: Bool = false, isCompleted: Bool = false) {
         self.title = title
         self.timestamp = timestamp

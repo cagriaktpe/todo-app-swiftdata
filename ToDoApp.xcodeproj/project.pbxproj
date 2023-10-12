@@ -14,6 +14,7 @@
 		EA44B12B2AD81604008C125A /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B12A2AD81604008C125A /* ToDoItem.swift */; };
 		EA44B12D2AD818C9008C125A /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B12C2AD818C9008C125A /* CreateToDoView.swift */; };
 		EA44B12F2AD83D51008C125A /* UpdateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B12E2AD83D51008C125A /* UpdateToDoView.swift */; };
+		EA44B1312AD87442008C125A /* CreateCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B1302AD87442008C125A /* CreateCategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		EA44B12A2AD81604008C125A /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		EA44B12C2AD818C9008C125A /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		EA44B12E2AD83D51008C125A /* UpdateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateToDoView.swift; sourceTree = "<group>"; };
+		EA44B1302AD87442008C125A /* CreateCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				EA44B1202AD7EC37008C125A /* Assets.xcassets */,
 				EA44B1222AD7EC37008C125A /* Preview Content */,
 				EA44B12E2AD83D51008C125A /* UpdateToDoView.swift */,
+				EA44B1302AD87442008C125A /* CreateCategoryView.swift */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA44B1312AD87442008C125A /* CreateCategoryView.swift in Sources */,
 				EA44B12D2AD818C9008C125A /* CreateToDoView.swift in Sources */,
 				EA44B11F2AD7EC32008C125A /* ContentView.swift in Sources */,
 				EA44B11D2AD7EC32008C125A /* ToDoAppApp.swift in Sources */,
