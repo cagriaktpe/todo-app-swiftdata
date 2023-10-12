@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreateView: View {
+struct CreateToDoView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -25,5 +25,5 @@ struct CreateView: View {
 }
 
 #Preview {
-    CreateView()
+    CreateToDoView()
 }
