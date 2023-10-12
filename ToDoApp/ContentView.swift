@@ -13,7 +13,10 @@ struct ContentView: View {
     
     @State private var showCreate = false
     @State private var toDoToEdit: ToDoItem?
-    @Query private var items: [ToDoItem]
+    @Query(
+        filter: #Predicate {$0.isCompleted == false},
+        sort: \ToDoItem.timestamp
+    ) private var items: [ToDoItem]
 
     var body: some View {
         NavigationStack {
