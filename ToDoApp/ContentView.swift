@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.modelContext) var modelContext
     
     @State private var showCreate = false
+    @State private var toDoToEdit: ToDoItem?
     @Query private var items: [ToDoItem]
 
     var body: some View {
@@ -59,6 +60,13 @@ struct ContentView: View {
                             Label("Delete", systemImage: "trash")
                         }
                         .tint(.red)
+                        
+                        Button {
+                            toDoToEdit = item
+                        } label: {
+                            Label("Edit", systemImage: "pencil")
+                        }
+                        .tint(.orange)
                     }
                 }
             }
@@ -78,6 +86,15 @@ struct ContentView: View {
                 }
                 .presentationDetents([.medium])
             })
+            .sheet(item: $toDoToEdit) {
+                toDoToEdit = nil
+            } content: { item in
+                NavigationStack {
+                    UpdateToDoView(item: item)
+                }
+                .presentationDetents([.medium])
+            }
+        
         }
     }
 }
