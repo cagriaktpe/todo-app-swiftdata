@@ -8,14 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showCreate = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            Text("Hello")
+                .toolbar {
+                    ToolbarItem {
+                        Button(action: {
+                            showCreate.toggle()
+                        }, label: {
+                            Label("Add Item", systemImage: "plus")
+                        })
+                    }
+                }
+                .sheet(isPresented: $showCreate, content: {
+                    NavigationStack {
+                        CreateView()
+                    }
+                    .presentationDetents([.medium])
+                })
         }
-        .padding()
     }
 }
 
