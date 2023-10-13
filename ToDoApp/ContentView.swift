@@ -114,7 +114,7 @@ struct ContentView: View {
                 NavigationStack {
                     CreateCategoryView()
                 }
-                .presentationDetents([.medium])
+                .presentationDetents([.large])
             })
             .safeAreaInset(edge: .bottom, alignment: .leading) {
                 Button {

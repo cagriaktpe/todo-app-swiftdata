@@ -43,18 +43,23 @@ struct CreateCategoryView: View {
             }
 
             Section("Categories") {
-                ForEach(categories) { category in
-                    Text(category.title)
-                        .swipeActions(edge: .trailing) {
-                            Button(role: .destructive)  {
-                                withAnimation {
-                                    modelContext.delete(category)
+                if categories.isEmpty {
+                    ContentUnavailableView("No Categories", systemImage: "archivebox")
+                
+                } else {
+                    ForEach(categories) { category in
+                        Text(category.title)
+                            .swipeActions(edge: .trailing) {
+                                Button(role: .destructive) {
+                                    withAnimation {
+                                        modelContext.delete(category)
+                                    }
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
                                 }
-                            } label: {
-                                Label("Delete", systemImage: "trash")
+                                .tint(.red)
                             }
-                            .tint(.red)
-                        }
+                    }
                 }
             }
         }
