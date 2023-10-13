@@ -104,6 +104,11 @@ struct ContentView: View {
             }
             .navigationTitle("My Todo List")
             .searchable(text: $searchQuery, prompt: "Search for a todo or a category")
+            .overlay {
+                if filteredItems.isEmpty {
+                    ContentUnavailableView.search
+                }
+            }
             .toolbar {
                 ToolbarItem {
                     Button(action: {
