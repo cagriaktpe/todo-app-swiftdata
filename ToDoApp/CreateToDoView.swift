@@ -19,16 +19,16 @@ struct CreateToDoView: View {
     
     var body: some View {
         List {
-            Section("ToDo Title") {
+            Section("To Do Title") {
                 TextField("Name", text: $item.title)
             }
             
-            Section {
+            Section("General") {
                 DatePicker("Choose a date", selection: $item.timestamp)
                 Toggle("Important?", isOn: $item.isCritical)
             }
             
-            Section {
+            Section("Select A Category")  {
                 Picker("Category", selection: $selectedCategory) {
                     ForEach(categories) { category in
                         Text(category.title)

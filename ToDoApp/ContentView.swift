@@ -10,13 +10,13 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
-    
+
     @State private var showCreateToDo = false
     @State private var showCreateCategory = false
-    
+
     @State private var toDoToEdit: ToDoItem?
     @Query(
-        filter: #Predicate {$0.isCompleted == false},
+        filter: #Predicate { $0.isCompleted == false },
         sort: \ToDoItem.timestamp
     ) private var items: [ToDoItem]
 
@@ -25,6 +25,8 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     HStack {
+                        // MARK: Content
+
                         VStack(alignment: .leading) {
                             if item.isCritical {
                                 Image(systemName: "exclamationmark.3")
@@ -40,6 +42,15 @@ struct ContentView: View {
 
                             Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .shortened))")
                                 .font(.callout)
+
+                            if let category = item.category {
+                                Text(category.title)
+                                    .foregroundStyle(Color.blue)
+                                    .bold()
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 8)
+                                    .background(Color.blue.opacity(0.1), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                            }
                         }
 
                         Spacer()
@@ -65,7 +76,7 @@ struct ContentView: View {
                             Label("Delete", systemImage: "trash")
                         }
                         .tint(.red)
-                        
+
                         Button {
                             toDoToEdit = item
                         } label: {

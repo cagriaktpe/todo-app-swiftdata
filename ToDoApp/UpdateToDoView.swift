@@ -21,12 +21,12 @@ struct UpdateToDoView: View {
                 TextField("Name", text: $item.title)
             }
             
-            Section {
+            Section("General") {
                 DatePicker("Choose a date", selection: $item.timestamp)
                 Toggle("Important?", isOn: $item.isCritical)
             }
             
-            Section {
+            Section("Select A Category") {
                 Picker("Category", selection: $item.category) {
                     ForEach(categories) { category in
                         Text(category.title)
