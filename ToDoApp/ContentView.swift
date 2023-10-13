@@ -97,7 +97,7 @@ struct ContentView: View {
                 NavigationStack {
                     UpdateToDoView(item: item)
                 }
-                .presentationDetents([.medium])
+                .presentationDetents([.large])
             }
             .sheet(isPresented: $showCreateCategory, content: {
                 NavigationStack {

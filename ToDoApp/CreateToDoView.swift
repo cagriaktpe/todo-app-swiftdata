@@ -42,17 +42,13 @@ struct CreateToDoView: View {
             }
             
             Section {
-                Button("Done") {
+                Button("Create") {
                     withAnimation {
                         save()
                         dismiss()
                     }
                 }
             }
-            
-            
-            
-        
         }
         .navigationTitle("Create ToDo")
         .toolbar {
@@ -63,7 +59,7 @@ struct CreateToDoView: View {
             }
             
             ToolbarItem(placement: .confirmationAction) {
-                Button("Save") {
+                Button("Done") {
                     save()
                     dismiss()
                 }
