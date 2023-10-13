@@ -42,7 +42,7 @@ struct CreateToDoView: View {
             }
             
             Section {
-                Button("Create") {
+                Button("Done") {
                     withAnimation {
                         save()
                         dismiss()
