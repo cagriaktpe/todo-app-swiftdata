@@ -29,16 +29,22 @@ struct CreateToDoView: View {
             }
             
             Section("Select A Category")  {
-                Picker("Category", selection: $selectedCategory) {
-                    ForEach(categories) { category in
-                        Text(category.title)
-                            .tag(category as Category?)
+                if categories.isEmpty {
+                    ContentUnavailableView("No Categories", systemImage: "archivebox")
+                
+                } else {
+                    Picker("Category", selection: $selectedCategory) {
+                        ForEach(categories) { category in
+                            Text(category.title)
+                                .tag(category as Category?)
+                        }
+                        Text("None")
+                            .tag(nil as Category?)
                     }
-                    Text("None")
-                        .tag(nil as Category?)
+                    .labelsHidden()
+                    .pickerStyle(.inline)
                 }
-                .labelsHidden()
-                .pickerStyle(.inline)
+                
             }
             
             Section {
