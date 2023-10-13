@@ -89,7 +89,7 @@ struct ContentView: View {
                 NavigationStack {
                     CreateToDoView()
                 }
-                .presentationDetents([.medium])
+                .presentationDetents([.large])
             })
             .sheet(item: $toDoToEdit) {
                 toDoToEdit = nil
