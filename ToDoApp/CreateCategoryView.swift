@@ -5,16 +5,16 @@
 //  Created by Samet Cagri Aktepe on 12/10/2023.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @Model
 class Category {
     @Attribute(.unique)
     var title: String
-    
+
     var items: [ToDoItem]?
-    
+
     init(title: String = "") {
         self.title = title
     }
@@ -23,23 +23,38 @@ class Category {
 struct CreateCategoryView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
-    
+
     @State private var title: String = ""
     @Query private var categories: [Category]
-    
+
     var body: some View {
         List {
             Section("Category Title") {
                 TextField("Enter title here", text: $title)
                 Button("Add Category") {
-                    modelContext.insert(Category(title: title))
+                    withAnimation {
+                        let category = Category(title: title)
+                        modelContext.insert(category)
+                        category.items = []
+                        title = ""
+                    }
                 }
                 .disabled(title.isEmpty)
             }
-            
+
             Section("Categories") {
                 ForEach(categories) { category in
                     Text(category.title)
+                        .swipeActions(edge: .trailing) {
+                            Button(role: .destructive)  {
+                                withAnimation {
+                                    modelContext.delete(category)
+                                }
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                            .tint(.red)
+                        }
                 }
             }
         }
@@ -51,7 +66,6 @@ struct CreateCategoryView: View {
                 }
             }
         }
-    
     }
 }
 
