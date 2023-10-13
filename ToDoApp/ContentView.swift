@@ -13,20 +13,32 @@ struct ContentView: View {
 
     @State private var showCreateToDo = false
     @State private var showCreateCategory = false
-
     @State private var toDoToEdit: ToDoItem?
+    @State private var searchQuery = ""
+    
     @Query(
         filter: #Predicate { $0.isCompleted == false },
         sort: \ToDoItem.timestamp
     ) private var items: [ToDoItem]
-
+    
+    var filteredItems: [ToDoItem] {
+        if searchQuery.isEmpty {
+            return items
+        } else {
+            return items.filter { item in
+                item.title.lowercased().contains(searchQuery.lowercased()) ||
+                    item.category?.title.lowercased().contains(searchQuery.lowercased()) ?? false
+            }
+        }
+    }
+    
     var body: some View {
         NavigationStack {
             List {
                 if items.isEmpty {
                     ContentUnavailableView("No Todo", systemImage: "checkmark.circle")
                 } else {
-                    ForEach(items) { item in
+                    ForEach(filteredItems) { item in
                         HStack {
                             // MARK: Content
 
@@ -91,6 +103,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("My Todo List")
+            .searchable(text: $searchQuery, prompt: "Search for a todo or a category")
             .toolbar {
                 ToolbarItem {
                     Button(action: {
