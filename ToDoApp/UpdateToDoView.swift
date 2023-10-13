@@ -41,7 +41,7 @@ struct UpdateToDoView: View {
             }
             
             Section {
-                Button("Done") {
+                Button("Update") {
                     withAnimation {
                         dismiss()
                     }
