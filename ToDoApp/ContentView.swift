@@ -24,7 +24,7 @@ struct ContentView: View {
         NavigationStack {
             List {
                 if items.isEmpty {
-                    ContentUnavailableView("No ToDo", systemImage: "checkmark.circle")
+                    ContentUnavailableView("No Todo", systemImage: "checkmark.circle")
                 } else {
                     ForEach(items) { item in
                         HStack {
@@ -90,7 +90,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("My ToDo List")
+            .navigationTitle("My Todo List")
             .toolbar {
                 ToolbarItem {
                     Button(action: {
@@ -124,7 +124,7 @@ struct ContentView: View {
                 Button {
                     showCreateToDo.toggle()
                 } label: {
-                    Label("New ToDo", systemImage: "plus")
+                    Label("New Todo", systemImage: "plus")
                         .bold()
                         .font(.title2)
                         .padding(0)

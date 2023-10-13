@@ -17,7 +17,7 @@ struct UpdateToDoView: View {
 
     var body: some View {
         List {
-            Section("ToDo Title") {
+            Section("Todo Title") {
                 TextField("Name", text: $item.title)
             }
 
@@ -52,7 +52,7 @@ struct UpdateToDoView: View {
                 }
             }
         }
-        .navigationTitle("Update ToDo")
+        .navigationTitle("Update Todo")
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel") {
