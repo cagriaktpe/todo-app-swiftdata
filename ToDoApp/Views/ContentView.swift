@@ -55,70 +55,66 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                if items.isEmpty {
-                    ContentUnavailableView("No Todo", systemImage: "checkmark.circle")
-                } else {
-                    ForEach(filteredItems) { item in
-                        HStack {
-                            // MARK: Content
+                ForEach(filteredItems) { item in
+                    HStack {
+                        // MARK: Content
 
-                            VStack(alignment: .leading) {
-                                if item.isCritical {
-                                    Image(systemName: "exclamationmark.3")
-                                        .symbolVariant(.fill)
-                                        .foregroundColor(.red)
-                                        .font(.largeTitle)
-                                        .bold()
-                                }
-
-                                Text(item.title)
+                        VStack(alignment: .leading) {
+                            if item.isCritical {
+                                Image(systemName: "exclamationmark.3")
+                                    .symbolVariant(.fill)
+                                    .foregroundColor(.red)
                                     .font(.largeTitle)
                                     .bold()
-
-                                Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .shortened))")
-                                    .font(.callout)
-
-                                if let category = item.category {
-                                    Text(category.title)
-                                        .foregroundStyle(Color.blue)
-                                        .bold()
-                                        .padding(.horizontal)
-                                        .padding(.vertical, 8)
-                                        .background(Color.blue.opacity(0.1), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                                }
                             }
 
-                            Spacer()
+                            Text(item.title)
+                                .font(.largeTitle)
+                                .bold()
 
-                            Button {
-                                withAnimation {
-                                    item.isCompleted.toggle()
-                                }
-                            } label: {
-                                Image(systemName: "checkmark")
-                                    .symbolVariant(.circle.fill)
-                                    .foregroundStyle(item.isCompleted ? .green : .gray)
-                                    .font(.largeTitle)
+                            Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .shortened))")
+                                .font(.callout)
+
+                            if let category = item.category {
+                                Text(category.title)
+                                    .foregroundStyle(Color.blue)
+                                    .bold()
+                                    .padding(.horizontal)
+                                    .padding(.vertical, 8)
+                                    .background(Color.blue.opacity(0.1), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                             }
-                            .buttonStyle(.plain)
                         }
-                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                            Button {
-                                withAnimation {
-                                    modelContext.delete(item)
-                                }
-                            } label: {
-                                Label("Delete", systemImage: "trash")
-                            }
-                            .tint(.red)
 
-                            Button {
-                                toDoToEdit = item
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
+                        Spacer()
+
+                        Button {
+                            withAnimation {
+                                item.isCompleted.toggle()
                             }
-                            .tint(.orange)
+                        } label: {
+                            Image(systemName: "checkmark")
+                                .symbolVariant(.circle.fill)
+                                .foregroundStyle(item.isCompleted ? .green : .gray)
+                                .font(.largeTitle)
                         }
+                        .buttonStyle(.plain)
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button {
+                            withAnimation {
+                                modelContext.delete(item)
+                            }
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                        .tint(.red)
+
+                        Button {
+                            toDoToEdit = item
+                        } label: {
+                            Label("Edit", systemImage: "pencil")
+                        }
+                        .tint(.orange)
                     }
                 }
             }
@@ -126,7 +122,10 @@ struct ContentView: View {
             .animation(.easeIn, value: filteredItems)
             .searchable(text: $searchQuery, prompt: "Search for a todo or a category")
             .overlay {
-                if filteredItems.isEmpty {
+                if items.isEmpty {
+                    ContentUnavailableView("No Todos", systemImage: "checkmark.circle")
+                }
+                else if filteredItems.isEmpty {
                     ContentUnavailableView.search
                 }
             }
