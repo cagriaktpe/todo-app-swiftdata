@@ -36,19 +36,19 @@ struct ContentView: View {
     @State private var searchQuery = ""
     @State private var selectedSortOption = SortOption.allCases.first!
 
-    @Query(
-        filter: #Predicate { $0.isCompleted == false },
-        sort: \ToDoItem.timestamp
-    ) private var items: [ToDoItem]
+    @Query private var items: [ToDoItem]
 
     var filteredItems: [ToDoItem] {
         if searchQuery.isEmpty {
-            return items
+            return items.sort(by: selectedSortOption)
         } else {
-            return items.filter { item in
+            let filteredItems = items.filter { item in
                 item.title.lowercased().contains(searchQuery.lowercased()) ||
                     item.category?.title.lowercased().contains(searchQuery.lowercased()) ?? false
+            
             }
+            
+            return filteredItems.sort(by: selectedSortOption)
         }
     }
 
@@ -191,6 +191,20 @@ struct ContentView: View {
         }
     }
 }
+
+private extension [ToDoItem] {
+    func sort(by option: SortOption) -> [ToDoItem] {
+        switch option {
+        case .title:
+            return sorted(by: { $0.title < $1.title })
+        case .date:
+            return sorted(by: { $0.timestamp < $1.timestamp })
+        case .category:
+            return sorted(by: { $0.category?.title ?? "" < $1.category?.title ?? "" })
+        }
+    }
+}
+
 
 #Preview {
     ContentView()
