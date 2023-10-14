@@ -20,6 +20,16 @@ class Category {
     }
 }
 
+extension Category {
+    static var defaults: [Category] {
+        [
+            .init(title: "🙇🏾‍♂️ Study"),
+            .init(title: "🤝 Routine"),
+            .init(title: "🏠 Family"),
+        ]
+    }
+}
+
 struct CreateCategoryView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
@@ -45,7 +55,7 @@ struct CreateCategoryView: View {
             Section("Categories") {
                 if categories.isEmpty {
                     ContentUnavailableView("No Categories", systemImage: "archivebox")
-                
+
                 } else {
                     ForEach(categories) { category in
                         Text(category.title)

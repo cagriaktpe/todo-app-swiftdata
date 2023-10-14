@@ -131,13 +131,6 @@ struct ContentView: View {
                 }
             }
             .toolbar {
-                /** ToolbarItem {
-                     Button(action: {
-                         showCreateCategory.toggle()
-                     }, label: {
-                         Text("New Category")
-                     })
-                 */
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Menu {
                         Picker("", selection: $selectedSortOption) {
@@ -153,6 +146,14 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "ellipsis")
                             .symbolVariant(.circle)
+                    }
+                }
+                
+                ToolbarItem(placement: .primaryAction) {
+                    Button {
+                        showCreateCategory.toggle()
+                    } label: {
+                        Label("New Category", systemImage: "plus")
                     }
                 }
             }
