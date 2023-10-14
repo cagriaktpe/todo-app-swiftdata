@@ -10,6 +10,7 @@
 		EA2095FF2ADA98BE0094A9AC /* ItemsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */; };
 		EA2096012ADAAEC50094A9AC /* CategoryDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */; };
 		EA2096062ADAB1570094A9AC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2096052ADAB1570094A9AC /* Category.swift */; };
+		EA2096082ADAB2B70094A9AC /* CategoriesJSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2096072ADAB2B70094A9AC /* CategoriesJSONDecoder.swift */; };
 		EA44B11D2AD7EC32008C125A /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B11C2AD7EC32008C125A /* ToDoAppApp.swift */; };
 		EA44B11F2AD7EC32008C125A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44B11E2AD7EC32008C125A /* ContentView.swift */; };
 		EA44B1212AD7EC37008C125A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA44B1202AD7EC37008C125A /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContainer.swift; sourceTree = "<group>"; };
 		EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryDefaults.json; sourceTree = "<group>"; };
 		EA2096052ADAB1570094A9AC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EA2096072ADAB2B70094A9AC /* CategoriesJSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesJSONDecoder.swift; sourceTree = "<group>"; };
 		EA44B1192AD7EC32008C125A /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA44B11C2AD7EC32008C125A /* ToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 		EA44B11E2AD7EC32008C125A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */,
+				EA2096072ADAB2B70094A9AC /* CategoriesJSONDecoder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				EA44B12F2AD83D51008C125A /* UpdateToDoView.swift in Sources */,
 				EA44B12B2AD81604008C125A /* ToDoItem.swift in Sources */,
 				EA2096062ADAB1570094A9AC /* Category.swift in Sources */,
+				EA2096082ADAB2B70094A9AC /* CategoriesJSONDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
