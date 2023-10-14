@@ -8,6 +8,25 @@
 import SwiftData
 import SwiftUI
 
+enum SortOption: String, CaseIterable {
+    case title
+    case date
+    case category
+}
+
+extension SortOption {
+    var systemImage: String {
+        switch self {
+        case .title:
+            "textformat.size.larger"
+        case .date:
+            "calendar"
+        case .category:
+            "folder"
+        }
+    }
+}
+
 struct ContentView: View {
     @Environment(\.modelContext) var modelContext
 
@@ -15,12 +34,13 @@ struct ContentView: View {
     @State private var showCreateCategory = false
     @State private var toDoToEdit: ToDoItem?
     @State private var searchQuery = ""
-    
+    @State private var selectedSortOption = SortOption.allCases.first!
+
     @Query(
         filter: #Predicate { $0.isCompleted == false },
         sort: \ToDoItem.timestamp
     ) private var items: [ToDoItem]
-    
+
     var filteredItems: [ToDoItem] {
         if searchQuery.isEmpty {
             return items
@@ -31,7 +51,7 @@ struct ContentView: View {
             }
         }
     }
-    
+
     var body: some View {
         NavigationStack {
             List {
@@ -110,12 +130,29 @@ struct ContentView: View {
                 }
             }
             .toolbar {
-                ToolbarItem {
-                    Button(action: {
-                        showCreateCategory.toggle()
-                    }, label: {
-                        Text("New Category")
-                    })
+                /** ToolbarItem {
+                     Button(action: {
+                         showCreateCategory.toggle()
+                     }, label: {
+                         Text("New Category")
+                     })
+                 */
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Menu {
+                        Picker("", selection: $selectedSortOption) {
+                            ForEach(SortOption.allCases,
+                                    id: \.rawValue) { option in
+                                Label(option.rawValue.capitalized,
+                                      systemImage: option.systemImage)
+                                    .tag(option)
+                            }
+                        }
+                        .labelsHidden()
+
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .symbolVariant(.circle)
+                    }
                 }
             }
             .sheet(isPresented: $showCreateToDo, content: {
