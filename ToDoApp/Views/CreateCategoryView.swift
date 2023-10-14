@@ -8,28 +8,6 @@
 import SwiftData
 import SwiftUI
 
-@Model
-class Category {
-    @Attribute(.unique)
-    var title: String
-
-    var items: [ToDoItem]?
-
-    init(title: String = "") {
-        self.title = title
-    }
-}
-
-extension Category {
-    static var defaults: [Category] {
-        [
-            .init(title: "🙇🏾‍♂️ Study"),
-            .init(title: "🤝 Routine"),
-            .init(title: "🏠 Family"),
-        ]
-    }
-}
-
 struct CreateCategoryView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var modelContext
