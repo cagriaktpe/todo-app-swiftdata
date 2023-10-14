@@ -110,7 +110,9 @@ struct ContentView: View {
                         .tint(.red)
 
                         Button {
-                            toDoToEdit = item
+                            withAnimation {
+                                toDoToEdit = item
+                            }
                         } label: {
                             Label("Edit", systemImage: "pencil")
                         }
