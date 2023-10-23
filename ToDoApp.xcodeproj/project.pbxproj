@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		817B624F2AE69E3800523908 /* SwiftUIImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 817B624E2AE69E3800523908 /* SwiftUIImageViewer */; };
 		EA2095FF2ADA98BE0094A9AC /* ItemsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */; };
 		EA2096012ADAAEC50094A9AC /* CategoryDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */; };
 		EA2096062ADAB1570094A9AC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2096052ADAB1570094A9AC /* Category.swift */; };
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817B624F2AE69E3800523908 /* SwiftUIImageViewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +133,9 @@
 			dependencies = (
 			);
 			name = ToDoApp;
+			packageProductDependencies = (
+				817B624E2AE69E3800523908 /* SwiftUIImageViewer */,
+			);
 			productName = ToDoApp;
 			productReference = EA44B1192AD7EC32008C125A /* ToDoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +164,9 @@
 				Base,
 			);
 			mainGroup = EA44B1102AD7EC32008C125A;
+			packageReferences = (
+				817B624D2AE69E3800523908 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+			);
 			productRefGroup = EA44B11A2AD7EC32008C125A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -400,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		817B624D2AE69E3800523908 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fuzzzlove/swiftui-image-viewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		817B624E2AE69E3800523908 /* SwiftUIImageViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 817B624D2AE69E3800523908 /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = SwiftUIImageViewer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA44B1112AD7EC32008C125A /* Project object */;
 }
