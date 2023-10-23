@@ -7,6 +7,7 @@
 
 import SwiftData
 import SwiftUI
+import SwiftUIImageViewer
 
 enum SortOption: String, CaseIterable {
     case title
@@ -35,6 +36,7 @@ struct ContentView: View {
     @State private var toDoToEdit: ToDoItem?
     @State private var searchQuery = ""
     @State private var selectedSortOption = SortOption.allCases.first!
+    @State private var isImageViewerPresented = false
 
     @Query private var items: [ToDoItem]
 
@@ -65,6 +67,24 @@ struct ContentView: View {
                                 .scaledToFill()
                                 .frame(maxWidth: .infinity, maxHeight: 128)
                                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                .onTapGesture {
+                                    isImageViewerPresented = true
+                                }
+                                .fullScreenCover(isPresented: $isImageViewerPresented) {
+                                    SwiftUIImageViewer(image: Image(uiImage: uiImage))
+                                        .overlay(alignment: .topTrailing) {
+                                            Button {
+                                                isImageViewerPresented = false
+                                            } label: {
+                                                Image(systemName: "xmark")
+                                                    .font(.headline)
+                                            }
+                                            .buttonStyle(.bordered)
+                                                    .clipShape(Circle())
+                                                    .tint(.blue)
+                                                    .padding()
+                                        }
+                                }
                         }
                         
                         HStack {
