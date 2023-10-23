@@ -14,6 +14,7 @@ final class ToDoItem {
     var timestamp: Date
     var isCritical: Bool
     var isCompleted: Bool
+    var image: Data?
     
     @Relationship(deleteRule: .nullify, inverse: \Category.items)
     var category: Category?

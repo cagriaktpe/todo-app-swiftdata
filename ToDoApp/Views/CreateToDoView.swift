@@ -19,7 +19,6 @@ struct CreateToDoView: View {
     @State var selectedCategory: Category?
 
     @State var selectedPhoto: PhotosPickerItem?
-    @State var selectedPhotoData: Data?
 
     var body: some View {
         List {
@@ -51,8 +50,8 @@ struct CreateToDoView: View {
             }
 
             Section {
-                if let selectedPhotoData,
-                   let uiImage = UIImage(data: selectedPhotoData) {
+                if let imageData = item.image,
+                   let uiImage = UIImage(data: imageData) {
                     Image(uiImage: uiImage)
                         .resizable()
                         .scaledToFill()
@@ -65,11 +64,11 @@ struct CreateToDoView: View {
                     Label("Add Image", systemImage: "photo")
                 }
 
-                if selectedPhotoData != nil {
+                if item.image != nil {
                     Button(role: .destructive) {
                         withAnimation {
                             selectedPhoto = nil
-                            selectedPhotoData = nil
+                            item.image = nil
                         }
                     } label: {
                         Label("Remove Image", systemImage: "xmark")
@@ -105,7 +104,7 @@ struct CreateToDoView: View {
         }
         .task(id: selectedPhoto) {
             if let data = try? await selectedPhoto?.loadTransferable(type: Data.self) {
-                selectedPhotoData = data
+                item.image = data
             }
         }
     }
