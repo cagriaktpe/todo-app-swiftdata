@@ -56,67 +56,79 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(filteredItems) { item in
-                    HStack {
-                        // MARK: Content
+                    VStack {
+                        // display image from item
+                        if let imageData = item.image,
+                           let uiImage = UIImage(data: imageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(maxWidth: .infinity, maxHeight: 128)
+                                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        }
+                        
+                        HStack {
+                            // MARK: Content
 
-                        VStack(alignment: .leading) {
-                            if item.isCritical {
-                                Image(systemName: "exclamationmark.3")
-                                    .symbolVariant(.fill)
-                                    .foregroundColor(.red)
+                            VStack(alignment: .leading) {
+                                if item.isCritical {
+                                    Image(systemName: "exclamationmark.3")
+                                        .symbolVariant(.fill)
+                                        .foregroundColor(.red)
+                                        .font(.largeTitle)
+                                        .bold()
+                                }
+
+                                Text(item.title)
                                     .font(.largeTitle)
                                     .bold()
+
+                                Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .shortened))")
+                                    .font(.callout)
+
+                                if let category = item.category {
+                                    Text(category.title)
+                                        .foregroundStyle(Color.blue)
+                                        .bold()
+                                        .padding(.horizontal)
+                                        .padding(.vertical, 8)
+                                        .background(Color.blue.opacity(0.1), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                                }
                             }
 
-                            Text(item.title)
-                                .font(.largeTitle)
-                                .bold()
+                            Spacer()
 
-                            Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .shortened))")
-                                .font(.callout)
-
-                            if let category = item.category {
-                                Text(category.title)
-                                    .foregroundStyle(Color.blue)
-                                    .bold()
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 8)
-                                    .background(Color.blue.opacity(0.1), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                            Button {
+                                withAnimation {
+                                    item.isCompleted.toggle()
+                                }
+                            } label: {
+                                Image(systemName: "checkmark")
+                                    .symbolVariant(.circle.fill)
+                                    .foregroundStyle(item.isCompleted ? .green : .gray)
+                                    .font(.largeTitle)
                             }
+                            .buttonStyle(.plain)
                         }
-
-                        Spacer()
-
-                        Button {
-                            withAnimation {
-                                item.isCompleted.toggle()
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button {
+                                withAnimation {
+                                    modelContext.delete(item)
+                                }
+                            } label: {
+                                Label("Delete", systemImage: "trash")
                             }
-                        } label: {
-                            Image(systemName: "checkmark")
-                                .symbolVariant(.circle.fill)
-                                .foregroundStyle(item.isCompleted ? .green : .gray)
-                                .font(.largeTitle)
-                        }
-                        .buttonStyle(.plain)
+                            .tint(.red)
+
+                            Button {
+                                withAnimation {
+                                    toDoToEdit = item
+                                }
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            .tint(.orange)
                     }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button {
-                            withAnimation {
-                                modelContext.delete(item)
-                            }
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
-                        .tint(.red)
-
-                        Button {
-                            withAnimation {
-                                toDoToEdit = item
-                            }
-                        } label: {
-                            Label("Edit", systemImage: "pencil")
-                        }
-                        .tint(.orange)
                     }
                 }
             }
