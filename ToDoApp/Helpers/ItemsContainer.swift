@@ -15,14 +15,11 @@ actor ItemsContainer {
         let configuration = ModelConfiguration()
         let container = try! ModelContainer(for: schema, configurations: configuration)
         if shouldCreateDefaults {
-            let categories = CategoryJSONDecoder.decode(from: "CategoryDefaults")
-            if categories.isEmpty == false {
-                categories.forEach { item in
-                    let category = Category(title: item.title)
-                    container.mainContext.insert(category)
-                }
-            }
             shouldCreateDefaults = false
+            let categories = DefaultsJSON.decode(from: "CategoryDefaults", type: [Category].self)
+            categories?.forEach { category in
+                container.mainContext.insert(category)
+            }
         }
         return container
     }
