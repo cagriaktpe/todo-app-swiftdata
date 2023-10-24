@@ -1,0 +1,20 @@
+[
+    {
+        "title" : "Sangria Time",
+        "isCritical" : true,
+        "isComplete" : false,
+    },
+    {
+        "title" : "Go & get wedding suit",
+        "isCritical" : false,
+        "isComplete" : true,
+    },
+    {
+        "title" : "Go visit family",
+        "isCritical" : true,
+        "isComplete" : false,
+        "Category" : {
+            "title" : "Family",
+        }
+    },
+]
