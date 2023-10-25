@@ -2,7 +2,8 @@
     {
         "title": "Sangria Time",
         "isCritical": true,
-        "isCompleted": false
+        "isCompleted": false,
+        "imageName": "deniz"
     },
     {
         "title": "Go & get wedding suit",

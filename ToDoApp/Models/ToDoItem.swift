@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import UIKit
 
 @Model
 final class ToDoItem: Codable {
@@ -34,6 +35,7 @@ final class ToDoItem: Codable {
         case isCritical
         case isCompleted
         case category
+        case imageName
     }
     
     init(from decoder: Decoder) throws {
@@ -43,6 +45,10 @@ final class ToDoItem: Codable {
         self.isCritical = try container.decode(Bool.self, forKey: .isCritical)
         self.isCompleted = try container.decode(Bool.self, forKey: .isCompleted)
         self.category = try container.decodeIfPresent(Category.self, forKey: .category)
+        if let imageName = try container.decodeIfPresent(String.self, forKey: .imageName) {
+            let image = UIImage(named: imageName)
+            self.image = image?.jpegData(compressionQuality: 0.8)
+        }
     }
     
     func encode(to encoder: Encoder) throws {
