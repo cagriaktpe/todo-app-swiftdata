@@ -21,7 +21,11 @@ actor ItemsContainer {
                 container.mainContext.insert(category)
             }
             let items = DefaultsJSON.decode(from: "ToDoItemsDefaults", type: [ToDoItem].self)
-            dump(items)
+            
+            items?.forEach { item in
+                container.mainContext.insert(item)
+                item.category?.items?.append(item)
+            }
         }
         return container
     }
