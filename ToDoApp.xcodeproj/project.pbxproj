@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		817B624F2AE69E3800523908 /* SwiftUIImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 817B624E2AE69E3800523908 /* SwiftUIImageViewer */; };
-		81BAB7712AE7BB4800BFC2FC /* ToDosDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = 81BAB7702AE7BB4800BFC2FC /* ToDosDefaults.json */; };
+		81BAB7712AE7BB4800BFC2FC /* ToDoItemsDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = 81BAB7702AE7BB4800BFC2FC /* ToDoItemsDefaults.json */; };
 		EA2095FF2ADA98BE0094A9AC /* ItemsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */; };
 		EA2096012ADAAEC50094A9AC /* CategoryDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */; };
 		EA2096062ADAB1570094A9AC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2096052ADAB1570094A9AC /* Category.swift */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		81BAB7702AE7BB4800BFC2FC /* ToDosDefaults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ToDosDefaults.json; sourceTree = "<group>"; };
+		81BAB7702AE7BB4800BFC2FC /* ToDoItemsDefaults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ToDoItemsDefaults.json; sourceTree = "<group>"; };
 		EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContainer.swift; sourceTree = "<group>"; };
 		EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryDefaults.json; sourceTree = "<group>"; };
 		EA2096052ADAB1570094A9AC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				EA44B1202AD7EC37008C125A /* Assets.xcassets */,
 				EA44B1222AD7EC37008C125A /* Preview Content */,
 				EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */,
-				81BAB7702AE7BB4800BFC2FC /* ToDosDefaults.json */,
+				81BAB7702AE7BB4800BFC2FC /* ToDoItemsDefaults.json */,
 			);
 			path = ToDoApp;
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 				EA2096012ADAAEC50094A9AC /* CategoryDefaults.json in Resources */,
 				EA44B1242AD7EC37008C125A /* Preview Assets.xcassets in Resources */,
 				EA44B1212AD7EC37008C125A /* Assets.xcassets in Resources */,
-				81BAB7712AE7BB4800BFC2FC /* ToDosDefaults.json in Resources */,
+				81BAB7712AE7BB4800BFC2FC /* ToDoItemsDefaults.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
