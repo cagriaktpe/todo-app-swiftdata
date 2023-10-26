@@ -241,9 +241,18 @@ private extension [ToDoItem] {
 }
 
 
-#Preview {
+#Preview("ToDo Screen Empty") {
     let preview = PreviewContainer([ToDoItem.self])
     return ContentView()
         .modelContainer(preview.container)
-        
+}
+
+#Preview("ToDo Screen With Data") {
+    let preview = PreviewContainer([ToDoItem.self])
+    if let items = DefaultsJSON.decode(from: "ToDoItemsDefaults", type: [ToDoItem].self) {
+        preview.add(items: items)
+    }
+    
+    return ContentView()
+        .modelContainer(preview.container)
 }
