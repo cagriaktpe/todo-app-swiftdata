@@ -105,7 +105,7 @@ struct UpdateToDoView: View {
 }
 
 #Preview {
-    let preview = PreviewContainer([ToDoItem.self])
-    return UpdateToDoView(item: ToDoItem.dummy)
-        .modelContainer(preview.container)
+    SwiftDataViewer(preview: PreviewContainer([ToDoItem.self])) {
+        UpdateToDoView(item: ToDoItem.dummy)
+    }
 }
