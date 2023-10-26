@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		817B624F2AE69E3800523908 /* SwiftUIImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 817B624E2AE69E3800523908 /* SwiftUIImageViewer */; };
 		81BAB7712AE7BB4800BFC2FC /* ToDoItemsDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = 81BAB7702AE7BB4800BFC2FC /* ToDoItemsDefaults.json */; };
+		81E0CE382AEA5B8600968C4F /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E0CE372AEA5B8600968C4F /* PreviewContainer.swift */; };
 		EA2095FF2ADA98BE0094A9AC /* ItemsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */; };
 		EA2096012ADAAEC50094A9AC /* CategoryDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */; };
 		EA2096062ADAB1570094A9AC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2096052ADAB1570094A9AC /* Category.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		81BAB7702AE7BB4800BFC2FC /* ToDoItemsDefaults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ToDoItemsDefaults.json; sourceTree = "<group>"; };
+		81E0CE372AEA5B8600968C4F /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsContainer.swift; sourceTree = "<group>"; };
 		EA2096002ADAAEC50094A9AC /* CategoryDefaults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CategoryDefaults.json; sourceTree = "<group>"; };
 		EA2096052ADAB1570094A9AC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		EA2096042ADAAEF20094A9AC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				81E0CE372AEA5B8600968C4F /* PreviewContainer.swift */,
 				EA2095FE2ADA98BE0094A9AC /* ItemsContainer.swift */,
 				EA2096072ADAB2B70094A9AC /* CategoriesJSONDecoder.swift */,
 			);
@@ -202,6 +205,7 @@
 				EA44B12D2AD818C9008C125A /* CreateToDoView.swift in Sources */,
 				EA44B11F2AD7EC32008C125A /* ContentView.swift in Sources */,
 				EA2095FF2ADA98BE0094A9AC /* ItemsContainer.swift in Sources */,
+				81E0CE382AEA5B8600968C4F /* PreviewContainer.swift in Sources */,
 				EA44B11D2AD7EC32008C125A /* ToDoAppApp.swift in Sources */,
 				EA44B12F2AD83D51008C125A /* UpdateToDoView.swift in Sources */,
 				EA44B12B2AD81604008C125A /* ToDoItem.swift in Sources */,

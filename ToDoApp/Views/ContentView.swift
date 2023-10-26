@@ -242,5 +242,8 @@ private extension [ToDoItem] {
 
 
 #Preview {
-    ContentView()
+    let preview = PreviewContainer([ToDoItem.self])
+    return ContentView()
+        .modelContainer(preview.container)
+        
 }
