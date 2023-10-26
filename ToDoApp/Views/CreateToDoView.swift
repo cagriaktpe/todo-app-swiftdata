@@ -121,8 +121,8 @@ private extension CreateToDoView {
     }
 }
 
-/*
- #Preview {
- CreateToDoView()
- }
- */
+#Preview {
+    let preview = PreviewContainer([ToDoItem.self])
+    return CreateToDoView()
+        .modelContainer(preview.container)
+}

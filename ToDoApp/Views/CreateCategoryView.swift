@@ -64,6 +64,8 @@ struct CreateCategoryView: View {
 
 #Preview {
     NavigationStack {
-        CreateCategoryView()
+        let preview = PreviewContainer([ToDoItem.self])
+        return CreateCategoryView()
+            .modelContainer(preview.container)
     }
 }
