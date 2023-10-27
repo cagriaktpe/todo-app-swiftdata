@@ -8,6 +8,10 @@
 import SwiftUI
 import SwiftData
 
+// MARK: SwiftData Models
+typealias ToDoItem = VersionSchemaV1.ToDoItem
+typealias Category = VersionSchemaV1.Category
+
 @main
 struct ToDoAppApp: App {
     @AppStorage("isFirstTimeLaunch") var isFirstTimeLaunch: Bool = true
