@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 import UIKit
 
-struct VersionSchemaV1: VersionedSchema {
+struct VersionedSchemaV1: VersionedSchema {
     static var models: [any PersistentModel.Type] {
         [ToDoItem.self, Category.self]
     }
@@ -17,7 +17,7 @@ struct VersionSchemaV1: VersionedSchema {
     static var versionIdentifier: Schema.Version = .init(1, 0, 0)
 }
 
-extension VersionSchemaV1 {
+extension VersionedSchemaV1 {
     @Model
     final class ToDoItem: Codable {
         var title: String

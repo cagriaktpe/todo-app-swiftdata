@@ -27,7 +27,7 @@ struct CreateToDoView: View {
             }
 
             Section("General") {
-                DatePicker("Choose a date", selection: $item.timestamp)
+                DatePicker("Choose a date", selection: $item.dueDate)
                 Toggle("Important?", isOn: $item.isCritical)
             }
 

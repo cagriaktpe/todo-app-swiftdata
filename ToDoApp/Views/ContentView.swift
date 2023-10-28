@@ -103,7 +103,7 @@ struct ContentView: View {
                                     .font(.largeTitle)
                                     .bold()
 
-                                Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .shortened))")
+                                Text("\(item.dueDate, format: Date.FormatStyle(date: .numeric, time: .shortened))")
                                     .font(.callout)
 
                                 if let category = item.category {
@@ -233,7 +233,7 @@ private extension [ToDoItem] {
         case .title:
             return sorted(by: { $0.title < $1.title })
         case .date:
-            return sorted(by: { $0.timestamp < $1.timestamp })
+            return sorted(by: { $0.dueDate < $1.dueDate })
         case .category:
             return sorted(by: { $0.category?.title ?? "" < $1.category?.title ?? "" })
         }

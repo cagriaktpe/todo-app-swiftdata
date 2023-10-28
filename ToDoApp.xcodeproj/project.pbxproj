@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		811106D42AEBC47D00C13838 /* VersionSchemaV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811106D32AEBC47C00C13838 /* VersionSchemaV1.swift */; };
+		811106D42AEBC47D00C13838 /* VersionedSchemaV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811106D32AEBC47C00C13838 /* VersionedSchemaV1.swift */; };
+		813DE7D82AED1D0400E421C4 /* VersionedSchemaV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813DE7D72AED1D0400E421C4 /* VersionedSchemaV2.swift */; };
 		817B624F2AE69E3800523908 /* SwiftUIImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = 817B624E2AE69E3800523908 /* SwiftUIImageViewer */; };
 		81BAB7712AE7BB4800BFC2FC /* ToDoItemsDefaults.json in Resources */ = {isa = PBXBuildFile; fileRef = 81BAB7702AE7BB4800BFC2FC /* ToDoItemsDefaults.json */; };
 		81E0CE382AEA5B8600968C4F /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E0CE372AEA5B8600968C4F /* PreviewContainer.swift */; };
@@ -27,7 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		811106D32AEBC47C00C13838 /* VersionSchemaV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionSchemaV1.swift; sourceTree = "<group>"; };
+		811106D32AEBC47C00C13838 /* VersionedSchemaV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionedSchemaV1.swift; sourceTree = "<group>"; };
+		813DE7D72AED1D0400E421C4 /* VersionedSchemaV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionedSchemaV2.swift; sourceTree = "<group>"; };
 		81BAB7702AE7BB4800BFC2FC /* ToDoItemsDefaults.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ToDoItemsDefaults.json; sourceTree = "<group>"; };
 		81E0CE372AEA5B8600968C4F /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		81E0CE3F2AEA96A200968C4F /* SwiftDataViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewer.swift; sourceTree = "<group>"; };
@@ -75,7 +77,8 @@
 			children = (
 				EA44B12A2AD81604008C125A /* ToDoItem.swift */,
 				EA2096052ADAB1570094A9AC /* Category.swift */,
-				811106D32AEBC47C00C13838 /* VersionSchemaV1.swift */,
+				811106D32AEBC47C00C13838 /* VersionedSchemaV1.swift */,
+				813DE7D72AED1D0400E421C4 /* VersionedSchemaV2.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,8 +212,9 @@
 			files = (
 				EA44B1312AD87442008C125A /* CreateCategoryView.swift in Sources */,
 				EA44B12D2AD818C9008C125A /* CreateToDoView.swift in Sources */,
-				811106D42AEBC47D00C13838 /* VersionSchemaV1.swift in Sources */,
+				811106D42AEBC47D00C13838 /* VersionedSchemaV1.swift in Sources */,
 				EA44B11F2AD7EC32008C125A /* ContentView.swift in Sources */,
+				813DE7D82AED1D0400E421C4 /* VersionedSchemaV2.swift in Sources */,
 				EA2095FF2ADA98BE0094A9AC /* ItemsContainer.swift in Sources */,
 				81E0CE382AEA5B8600968C4F /* PreviewContainer.swift in Sources */,
 				EA44B11D2AD7EC32008C125A /* ToDoAppApp.swift in Sources */,

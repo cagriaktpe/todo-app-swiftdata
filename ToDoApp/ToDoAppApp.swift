@@ -9,8 +9,8 @@ import SwiftUI
 import SwiftData
 
 // MARK: SwiftData Models
-typealias ToDoItem = VersionSchemaV1.ToDoItem
-typealias Category = VersionSchemaV1.Category
+typealias ToDoItem = VersionedSchemaV2.ToDoItem
+typealias Category = VersionedSchemaV2.Category
 
 @main
 struct ToDoAppApp: App {

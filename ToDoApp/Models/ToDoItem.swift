@@ -12,7 +12,7 @@ import UIKit
 extension ToDoItem: Identifiable {
     static var dummy: ToDoItem {
         .init(title: "Item 1",
-              timestamp: .now,
+              dueDate: .now,
               isCritical: true)
     }
 }
