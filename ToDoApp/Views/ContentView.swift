@@ -91,12 +91,21 @@ struct ContentView: View {
                             // MARK: Content
 
                             VStack(alignment: .leading) {
-                                if item.isCritical {
-                                    Image(systemName: "exclamationmark.3")
-                                        .symbolVariant(.fill)
-                                        .foregroundColor(.red)
-                                        .font(.largeTitle)
-                                        .bold()
+                                HStack {
+                                    if item.isFlagged {
+                                        Image(systemName: "flag.fill")
+                                            .foregroundColor(.yellow)
+                                            .font(.largeTitle)
+                                            .bold()
+                                    }
+                                    
+                                    if item.isCritical {
+                                        Image(systemName: "exclamationmark.3")
+                                            .symbolVariant(.fill)
+                                            .foregroundColor(.red)
+                                            .font(.largeTitle)
+                                            .bold()
+                                    }
                                 }
 
                                 Text(item.title)
@@ -147,8 +156,18 @@ struct ContentView: View {
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
+                            .tint(.yellow)
+                            
+                            Button {
+                                withAnimation {
+                                    item.isFlagged.toggle()
+                                }
+                            } label: {
+                                Label(item.isFlagged ? "Unflag" : "Flag", systemImage: item.isFlagged ? "flag.slash" : "flag")
+                                    .symbolVariant(.fill)
+                                            }
                             .tint(.orange)
-                    }
+                        }
                     }
                 }
             }
