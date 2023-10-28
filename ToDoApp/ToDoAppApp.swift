@@ -9,8 +9,8 @@ import SwiftUI
 import SwiftData
 
 // MARK: SwiftData models
-typealias ToDoItem = VersionedSchemaV2.ToDoItem
-typealias Category = VersionedSchemaV2.Category
+typealias ToDoItem = VersionedSchemaV3.ToDoItem
+typealias Category = VersionedSchemaV3.Category
 
 // MARK: Migration plan
 enum ToDosMigrationPlan: SchemaMigrationPlan {
