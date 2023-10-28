@@ -8,9 +8,28 @@
 import SwiftUI
 import SwiftData
 
-// MARK: SwiftData Models
+// MARK: SwiftData models
 typealias ToDoItem = VersionedSchemaV2.ToDoItem
 typealias Category = VersionedSchemaV2.Category
+
+// MARK: Migration plan
+enum ToDosMigrationPlan: SchemaMigrationPlan {
+    static var schemas: [VersionedSchema.Type] {
+        [
+            VersionedSchemaV1.self,
+            VersionedSchemaV2.self
+        ]
+    }
+    
+    static var stages: [MigrationStage] {
+        []
+    }
+    
+    static let migrateV1toV2 = MigrationStage.lightweight(
+        fromVersion: VersionedSchemaV1.self,
+        toVersion: VersionedSchemaV2.self
+    )
+}
 
 @main
 struct ToDoAppApp: App {
