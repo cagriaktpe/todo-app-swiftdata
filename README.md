@@ -25,7 +25,6 @@ This simple ToDo application has been developed using the Swift programming lang
 git clone tps://github.com/denaktepe/todo-app-swiftdata/.git
 ```
 
-
 2. Navigate to the project folder and run the following command to install the necessary dependencies:
 
 ```
@@ -35,12 +34,6 @@ pod install
 3. Open Xcode and open the TodoApp.xcworkspace file.
 
 4. Build the project in Xcode and optionally run it on an iOS device or simulator.
-
-## How to Use
-
-1. Open the app and enter your height and weight on the home screen.
-2. Tap the "Calculate" button.
-3. The result screen will display your calculated BMI value along with a comment.
 
 ## Contributions
 
