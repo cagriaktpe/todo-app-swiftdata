@@ -22,7 +22,7 @@ This simple ToDo application has been developed using the Swift programming lang
 1. Clone this repository or download it as a zip file:
 
 ```
-git clone tps://github.com/denaktepe/todo-app-swiftdata/.git
+git clone tps://github.com/denaktepe/todo-app-swiftdata.git
 ```
 
 2. Navigate to the project folder and run the following command to install the necessary dependencies:
