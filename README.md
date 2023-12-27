@@ -35,19 +35,6 @@ pod install
 
 4. Build the project in Xcode and optionally run it on an iOS device or simulator.
 
-## Contributions
-
-If you would like to contribute to this project, please follow these steps:
-
-1. Fork this repository to your GitHub account.
-2. Create a new branch: `git checkout -b my-feature`
-3. Make your changes and commit them: `git commit -m "A descriptive commit message"`
-4. Push your changes: `git push origin my-feature`
-5. Open a pull request and share your changes.
-
-## Contact
-
-For any questions, suggestions, or feedback, please email me at sametcagriaktepe@gmail.com.
 
 
 
